@@ -45,12 +45,15 @@
 
 				// Otherwise, show photos
 				return `
+					<p>Click on a photo to edit it.</p>
 					<div id="photos">
 						${photos.map(function (photo) {
 							return `
 								<div class="photo">
-									<img alt="${photo.description}" src="${photo.url}">
-									<div>${photo.name} - $${photo.price}</div>
+									<a href="edit.html?id=${photo.id}">
+										<img alt="${photo.description}" src="${photo.url}">
+										<div>${photo.name} - $${photo.price}</div>
+									</a>
 								</div>`;
 						}).join('')}
 					</div>`;
